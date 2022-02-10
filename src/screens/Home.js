@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './HomeStyles.css';
 
 
 const Home = () => {
@@ -14,16 +15,23 @@ const Home = () => {
   }
 
   return (
-    <div>
-      <div>todos</div>
+    <div className='wholeBackgroundStyle'>
+      <div>Todos</div>
       <form onSubmit={handleClick}>
-        <input type="text" placeholder="What needs to be done"></input>
-        <button type="submit">Add todo</button>
+        <input 
+          type="text" 
+          placeholder="What needs to be done"
+        >
+        </input>
+        <button className = 'button'
+          type="submit"
+        > Add todo
+        </button>
       </form>
-      <div><ul>{curentTodoItem?.map((item) => {
+      <div>{curentTodoItem?.map((item) => {
         console.log("item", item);
-        return <li>{item}</li>;
-      })}</ul></div>
+        return <ul>{item}</ul>;
+      })}</div>
     </div>
   );
 }
